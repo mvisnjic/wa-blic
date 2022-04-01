@@ -5,8 +5,8 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-
+    <img alt="Vue logo" src="./assets/logo.png" class="mx-auto" />
+    <div class="mb-12"><router-link to="/">| Home</router-link> |</div>
     <router-view />
 </template>
 
@@ -17,6 +17,5 @@ import HelloWorld from './components/HelloWorld.vue'
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
 }
 </style>
