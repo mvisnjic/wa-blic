@@ -8,9 +8,10 @@ const routes = [
         component: Home,
     },
     {
-        path: '/details',
+        path: '/details/:name',
         name: 'details',
         component: Second,
+        props: true,
     },
 ]
 const router = createRouter({

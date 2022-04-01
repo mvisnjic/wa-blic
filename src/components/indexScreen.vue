@@ -5,22 +5,37 @@
         <div
             v-for="book in data"
             :key="book.id"
+            :authors="book.authors[0]"
+            :isbn="book.isbn"
+            :numPages="book.numberOfPages"
+            :publisher="book.publisher"
+            :country="book.country"
             class="mb-12 w-[300px] mx-auto"
         >
             <router-link
                 :to="{
                     name: 'details',
                     params: {
-                        id: book.id,
+                        name: book.name,
+                        authors: book.authors[0],
+                        isbn: book.isbn,
+                        numPages: book.numberOfPages,
+                        publisher: book.publisher,
+                        country: book.country,
+                        characters: book.characters.length,
                     },
                 }"
             >
-                <pre class="card cursor-pointer">{{ book.name }}</pre>
+                <div class="card cursor-pointer text-black">
+                    Name: {{ book.name }} <br />
+                    Released: {{ book.released }} <br />
+                    Author: {{ book.authors[0] }} <br />
+                </div>
             </router-link>
         </div>
     </div>
 
-    <div v-else>Loading...</div>
+    <div v-else>Fetching data, Please wait...</div>
 </template>
 
 <script setup>
